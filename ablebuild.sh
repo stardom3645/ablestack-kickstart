@@ -22,6 +22,7 @@ echo $blue;
 echo "#####  make iso 'ablestack_$1-el8.iso' #####"
 echo $reset;
 
+# 추가 디렉토리 필요시 추가
 mkdir -p $KS_PATH/ks
 mkdir -p $KS_PATH/rpms
 mkdir -p $KS_PATH/docker
