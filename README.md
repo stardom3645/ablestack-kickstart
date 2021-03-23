@@ -29,6 +29,8 @@
 
 > isolinux/isolinux.cfg 파일은 legacy 부팅에 사용되는 파일입니다.
 
+> ks/ablestack-ks.cfg 파일은 kickstart 설치가 진행될 때 실제 실행되는 스크립트 파일입니다.
+
 4. 설치 rpm 및 script 파일
 #### kickstart에서 설치 되어야 할 rpm 및 script 파일을 각각 위치에 복사합니다.
 ![kickstart_image](https://github.com/ablecloud-team/ablecloud-homepage/blob/master/wiki-img/kickstart-readme-5.png?raw=true)
