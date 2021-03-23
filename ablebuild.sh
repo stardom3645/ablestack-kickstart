@@ -1,3 +1,9 @@
+'''
+Copyright (c) 2021 ABLECLOUD Co. Ltd
+이 파일은 ablestack ISO image를 생성하는 파일입니다.
+최초 작성일 : 2021. 03. 23
+'''
+
 #!/bin/bash
 
 red=`tput setaf 1`;
