@@ -45,4 +45,4 @@ yes|cp $PWD_PATH/kickstart/scripts/* $KS_PATH/scripts
 
 sed -i "s/^ablestack_ver.*/ablestack_ver=$VER/g" $KS_PATH/ks/ablestack-ks.cfg
 
-mkisofs -o $PWD_PATH/ablestack_$1-el8.iso -b isolinux/isolinux.bin -J -R -l -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -graft-points -r -V "CentOS-8-2-2004-x86_64-dvd" $KS_PATH
+mkisofs -o $PWD_PATH/ablestack_$1-el8.iso -b isolinux/isolinux.bin -J -R -l -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -graft-points -r -V "CentOS-8-3-2011-x86_64-dvd" $KS_PATH
