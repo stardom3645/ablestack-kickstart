@@ -31,11 +31,15 @@ echo $reset;
 # 추가 디렉토리 필요시 추가
 mkdir -p $KS_PATH/ks
 mkdir -p $KS_PATH/rpms
+mkdir -p $KS_PATH/whls
 mkdir -p $KS_PATH/docker
 mkdir -p $KS_PATH/scripts
 
 yes|cp $PWD_PATH/kickstart/ks/ablestack-ks.cfg $KS_PATH/ks/
+yes|cp $PWD_PATH/kickstart/EFI/boot/grub.cfg $KS_PATH/EFI/boot/grub.cfg
+yes|cp $PWD_PATH/kickstart/isolinux/isolinux.cfg $KS_PATH/isolinux/isolinux.cfg
 yes|cp $PWD_PATH/kickstart/rpms/* $KS_PATH/rpms/
+yes|cp $PWD_PATH/kickstart/whls/* $KS_PATH/whls/
 yes|cp $PWD_PATH/kickstart/docker/* $KS_PATH/docker/
 yes|cp $PWD_PATH/kickstart/scripts/* $KS_PATH/scripts
 
