@@ -36,7 +36,7 @@ mkdir -p $KS_PATH/docker
 mkdir -p $KS_PATH/scripts
 
 yes|cp $PWD_PATH/kickstart/ks/ablestack-ks.cfg $KS_PATH/ks/
-yes|cp $PWD_PATH/kickstart/EFI/boot/grub.cfg $KS_PATH/EFI/boot/grub.cfg
+yes|cp $PWD_PATH/kickstart/EFI/BOOT/grub.cfg $KS_PATH/EFI/BOOT/grub.cfg
 yes|cp $PWD_PATH/kickstart/isolinux/isolinux.cfg $KS_PATH/isolinux/isolinux.cfg
 yes|cp $PWD_PATH/kickstart/rpms/* $KS_PATH/rpms/
 yes|cp $PWD_PATH/kickstart/whls/* $KS_PATH/whls/
