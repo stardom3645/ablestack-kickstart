@@ -1,8 +1,6 @@
-'''
-Copyright (c) 2021 ABLECLOUD Co. Ltd
-이 파일은 ablestack ISO image를 생성하는 파일입니다.
-최초 작성일 : 2021. 03. 23
-'''
+# Copyright (c) 2021 ABLECLOUD Co. Ltd
+# 이 파일은 ablestack ISO image를 생성하는 파일입니다.
+# 최초 작성일 : 2021. 03. 23
 
 #!/bin/bash
 
@@ -34,15 +32,17 @@ mkdir -p $KS_PATH/rpms
 mkdir -p $KS_PATH/whls
 mkdir -p $KS_PATH/docker
 mkdir -p $KS_PATH/scripts
+mkdir -p $KS_PATH/settings/cockpit
+mkdir -p $KS_PATH/settings/images
 
 yes|cp $PWD_PATH/kickstart/ks/ablestack-ks.cfg $KS_PATH/ks/
-yes|cp $PWD_PATH/kickstart/EFI/boot/grub.cfg $KS_PATH/EFI/boot/grub.cfg
+yes|cp $PWD_PATH/kickstart/EFI/BOOT/grub.cfg $KS_PATH/EFI/BOOT/grub.cfg
 yes|cp $PWD_PATH/kickstart/isolinux/isolinux.cfg $KS_PATH/isolinux/isolinux.cfg
 yes|cp $PWD_PATH/kickstart/rpms/* $KS_PATH/rpms/
 yes|cp $PWD_PATH/kickstart/whls/* $KS_PATH/whls/
-yes|cp $PWD_PATH/kickstart/docker/* $KS_PATH/docker/
 yes|cp $PWD_PATH/kickstart/scripts/* $KS_PATH/scripts
+yes|cp $PWD_PATH/kickstart/settings/cockpit/* $KS_PATH/settings/cockpit/
+# yes|cp $PWD_PATH/kickstart/settings/images/* $KS_PATH/settings/images/
 
-sed -i "s/^ablestack_ver.*/ablestack_ver=$VER/g" $KS_PATH/ks/ablestack-ks.cfg
 
 mkisofs -o $PWD_PATH/ablestack_$1-el8.iso -b isolinux/isolinux.bin -J -R -l -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -graft-points -r -V "CentOS-8-3-2011-x86_64-dvd" $KS_PATH
