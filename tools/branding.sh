@@ -18,8 +18,9 @@ then
 fi
 
 # product.img 파일 생성
-find $PWD_PATH/product | cpio -c -o | gzip -9cv > $PWD_PATH/product.img
-
+cd $PWD_PATH/product
+find . | cpio -c -o | gzip -9cv > product.img
+cd -
 # product.img 파일 복사
 \cp -f $PWD_PATH/product.img $KS_PATH/images/
 
