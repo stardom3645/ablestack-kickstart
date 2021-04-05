@@ -1,4 +1,6 @@
 *.qcow2
 *.rpm
 *.whl
+*.iso
+*.img
 kickstart/settings/images/
