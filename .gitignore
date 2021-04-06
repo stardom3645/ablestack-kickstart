@@ -3,5 +3,6 @@
 *.whl
 *.iso
 *.img
+.gitignore
 kickstart/settings/images/
 ISO
