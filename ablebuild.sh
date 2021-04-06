@@ -44,4 +44,4 @@ yes|cp $PWD_PATH/kickstart/settings/cockpit/* $KS_PATH/settings/cockpit/
 #yes|cp $PWD_PATH/kickstart/settings/images/* $KS_PATH/settings/images/
 
 
-mkisofs -o $PWD_PATH/ablestack_$1-el8.iso -b isolinux/isolinux.bin -J -R -l -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -graft-points -r -V "CentOS-8-3-2011-x86_64-dvd" $KS_PATH
+mkisofs -o ./ISO/ablestack-$1-el8.iso -b isolinux/isolinux.bin -J -R -l -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -graft-points -r -V "CentOS-8-3-2011-x86_64-dvd" $KS_PATH
