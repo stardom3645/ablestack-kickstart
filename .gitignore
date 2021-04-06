@@ -1,8 +1,0 @@
-*.qcow2
-*.rpm
-*.whl
-*.iso
-*.img
-.gitignore
-kickstart/settings/images/
-ISO
