@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <port port="5900-5949" protocol="tcp"/>
+  <port port="16509" protocol="tcp"/>
+  <port port="16514" protocol="tcp"/>
+</service>
