@@ -11,4 +11,6 @@
   <port port="5404" protocol="udp"/>
   <port port="5405-5412" protocol="udp"/>
   <port port="9929" protocol="udp"/>
+  <port port="2049" protocol="tcp"/>
+  <port port="123" protocol="udp"/>
 </service>
