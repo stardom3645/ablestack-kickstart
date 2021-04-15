@@ -13,4 +13,5 @@
   <port port="9929" protocol="udp"/>
   <port port="2049" protocol="tcp"/>
   <port port="123" protocol="udp"/>
+  <port port="49152" protocol="udp"/>
 </service>
