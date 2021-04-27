@@ -10,7 +10,7 @@ green=`tput setaf 2`;
 reset=`tput sgr0`;
 
 VER=$1
-KS_PATH=$2
+ORG_ISO_PATH=$2
 PWD_PATH=`pwd -P`
 
 if [ $# -ne 2 ]
@@ -27,21 +27,20 @@ echo "#####  make iso 'ablestack_$1-el8.iso' #####"
 echo $reset;
 
 # 추가 디렉토리 필요시 추가
-mkdir -p $KS_PATH/ks
-mkdir -p $KS_PATH/rpms
-mkdir -p $KS_PATH/whls
-mkdir -p $KS_PATH/scripts
-mkdir -p $KS_PATH/settings/cockpit
-mkdir -p $KS_PATH/settings/images
+mkdir -p $ORG_ISO_PATH/ks
+mkdir -p $ORG_ISO_PATH/rpms
+mkdir -p $ORG_ISO_PATH/whls
+mkdir -p $ORG_ISO_PATH/scripts
+mkdir -p $ORG_ISO_PATH/settings/cockpit
+mkdir -p $ORG_ISO_PATH/settings/images
 
-yes|cp $PWD_PATH/kickstart/ks/ablestack-ks.cfg $KS_PATH/ks/
-yes|cp $PWD_PATH/kickstart/EFI/BOOT/grub.cfg $KS_PATH/EFI/BOOT/grub.cfg
-yes|cp $PWD_PATH/kickstart/isolinux/isolinux.cfg $KS_PATH/isolinux/isolinux.cfg
-yes|cp $PWD_PATH/kickstart/rpms/* $KS_PATH/rpms/
-yes|cp $PWD_PATH/kickstart/whls/* $KS_PATH/whls/
-yes|cp $PWD_PATH/kickstart/scripts/* $KS_PATH/scripts
-yes|cp $PWD_PATH/kickstart/settings/cockpit/* $KS_PATH/settings/cockpit/
-yes|cp $PWD_PATH/kickstart/settings/images/* $KS_PATH/settings/images/
+yes|cp $PWD_PATH/kickstart/ks/ablestack-ks.cfg $ORG_ISO_PATH/ks/
+yes|cp $PWD_PATH/kickstart/EFI/BOOT/grub.cfg $ORG_ISO_PATH/EFI/BOOT/grub.cfg
+yes|cp $PWD_PATH/kickstart/isolinux/isolinux.cfg $ORG_ISO_PATH/isolinux/isolinux.cfg
+yes|cp $PWD_PATH/kickstart/rpms/* $ORG_ISO_PATH/rpms/
+yes|cp $PWD_PATH/kickstart/whls/* $ORG_ISO_PATH/whls/
+yes|cp $PWD_PATH/kickstart/scripts/* $ORG_ISO_PATH/scripts
+yes|cp $PWD_PATH/kickstart/settings/cockpit/* $ORG_ISO_PATH/settings/cockpit/
+#yes|cp $PWD_PATH/kickstart/settings/images/* $ORG_ISO_PATH/settings/images/
 
-
-mkisofs -o ./ISO/ablestack-$1-el8.iso -b isolinux/isolinux.bin -J -R -l -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -graft-points -r -V "CentOS-8-3-2011-x86_64-dvd" $KS_PATH
+genisoimage -U -r -v -T -J -joliet-long -V "ABLESTACK" -volset "ABLESTACK" -A "ABLESTACK" -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -o ./ISO/ABLESTACK-$1-el8.iso $ORG_ISO_PATH
