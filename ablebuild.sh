@@ -41,6 +41,6 @@ yes|cp $PWD_PATH/kickstart/rpms/* $ORG_ISO_PATH/rpms/
 yes|cp $PWD_PATH/kickstart/whls/* $ORG_ISO_PATH/whls/
 yes|cp $PWD_PATH/kickstart/scripts/* $ORG_ISO_PATH/scripts
 yes|cp $PWD_PATH/kickstart/settings/cockpit/* $ORG_ISO_PATH/settings/cockpit/
-#yes|cp $PWD_PATH/kickstart/settings/images/* $ORG_ISO_PATH/settings/images/
+yes|cp $PWD_PATH/kickstart/settings/images/* $ORG_ISO_PATH/settings/images/
 
 genisoimage -U -r -v -T -J -joliet-long -V "ABLESTACK" -volset "ABLESTACK" -A "ABLESTACK" -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -o ./ISO/ABLESTACK-$1-el8.iso $ORG_ISO_PATH
