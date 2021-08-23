@@ -10,7 +10,9 @@ green=`tput setaf 2`;
 reset=`tput sgr0`;
 
 VER=$1
+
 ISO_DIR_PATH=$2
+
 PWD_PATH=`pwd -P`
 
 if [ $# -ne 2 ]
@@ -27,6 +29,7 @@ echo "#####  make iso 'ablestack_$1-el8.iso' #####"
 echo $reset;
 
 # 추가 디렉토리 필요시 추가
+
 mkdir -p $ISO_DIR_PATH/ks
 mkdir -p $ISO_DIR_PATH/rpms
 mkdir -p $ISO_DIR_PATH/whls
