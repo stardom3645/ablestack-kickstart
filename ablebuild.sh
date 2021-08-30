@@ -40,6 +40,7 @@ mkdir -p $ISO_DIR_PATH/settings/images
 
 yes|cp $PWD_PATH/kickstart/ks/ablestack-ks.cfg $ISO_DIR_PATH/ks/
 yes|cp $PWD_PATH/kickstart/EFI/BOOT/grub.cfg $ISO_DIR_PATH/EFI/BOOT/grub.cfg
+yes|cp $PWD_PATH/kickstart/EFI/BOOT/BOOT.conf $ISO_DIR_PATH/EFI/BOOT/BOOT.conf
 yes|cp $PWD_PATH/kickstart/isolinux/isolinux.cfg $ISO_DIR_PATH/isolinux/isolinux.cfg
 yes|cp $PWD_PATH/kickstart/rpms/* $ISO_DIR_PATH/rpms/
 yes|cp $PWD_PATH/kickstart/whls/* $ISO_DIR_PATH/whls/
@@ -48,4 +49,6 @@ yes|cp $PWD_PATH/kickstart/settings/cockpit/* $ISO_DIR_PATH/settings/cockpit/
 yes|cp $PWD_PATH/kickstart/settings/images/* $ISO_DIR_PATH/settings/images/
 
 
-mkisofs -o ./ISO/ablestack-$1-el8.iso -b isolinux/isolinux.bin -J -R -l -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -graft-points -r -V "CentOS-8-3-2011-x86_64-dvd" $ISO_DIR_PATH
+#mkisofs -o ./ISO/ablestack-$1-el8.iso -b isolinux/isolinux.bin -J -R -l -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -graft-points -r -V "ABLESTACK" $ISO_DIR_PATH
+
+genisoimage -U -r -v -T -J -joliet-long -V "ABLESTACK-2.0.0" -volset "ABLESTACK-2.0.0" -A "ABLESTACK-2.0.0" -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -o ./ISO/ablestack-$1-el8.iso $ISO_DIR_PATH
