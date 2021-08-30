@@ -9,7 +9,8 @@ Restart=on-failure
 #Change this line if you download ther
 
 ExecStart=/usr/share/ablestack/ablestack-wall/libvirt-exporter/libvirt-exporter \
-  --web.listen-address=":3002"
+  --web.listen-address=":3002" \
+  --conf.path="/usr/share/ablestack/ablestack-wall/libvirt-exporter/conf.json"
 
 [Install]
 WantedBy=multi-user.target
