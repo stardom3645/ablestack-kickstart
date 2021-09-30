@@ -8,9 +8,9 @@ Restart=on-failure
 
 #Change this line if you download ther
 
-ExecStart=/usr/share/ablestack/ablestack-wall/process-ablestack-wall/process-ablestack-wall \
+ExecStart=/usr/share/ablestack/ablestack-wall/process-exporter/process-exporter \
   -web.listen-address ":3004" \
-  -config.path /usr/share/ablestack/ablestack-wall/process-ablestack-wall/process.yml
+  -config.path /usr/share/ablestack/ablestack-wall/process-exporter/process.yml
 
 [Install]
 WantedBy=multi-user.target

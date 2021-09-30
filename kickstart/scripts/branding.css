@@ -1,0 +1,28 @@
+body.login-pf {
+    background: url("bg-plain.jpg") no-repeat 50% 0;
+    background-size: cover;
+    background-color: #101010;
+}
+
+#badge {
+    width: 225px;
+    height: 80px;
+    background-image: url("logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#brand {
+    font-size: 18pt;
+    text-transform: uppercase;
+}
+
+/* ABLESTACK 브렌딩 추가 시작 */
+#brand:before {
+    content: "ABLESTACK v1.0";
+}
+
+#index-brand:before {
+    content: "ABLESTACK v1.0";
+}
+/* ABLESTACK 브렌딩 추가 끝 */
