@@ -1,7 +1,0 @@
-ISO
-tools
-*.rpm
-*.iso
-*.whl
-*.qcow2*
-kickstart/settings/*
