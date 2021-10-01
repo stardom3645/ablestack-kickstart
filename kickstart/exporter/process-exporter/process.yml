@@ -1,4 +1,0 @@
-process_names:
-  - name: "{{.Comm}};{{.ExeBase}};{{.ExeFull}};{{.Username}};{{.Matches}}"
-    cmdline:
-    - 'qemu-kvm.+|libvirtd|sshd|cloudstack-agent|node_exporter|libvirt-exporter|process-exporter'
