@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BUILDNUM="Bronto v2.0.1(220511)"
+BUILDNUM="Cerato v3.0.0(220607)"
 
 if [ "$#" -lt 1 ]; then
     echo "Try 'ablestack --help' for more information."
