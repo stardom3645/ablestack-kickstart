@@ -1,0 +1,17 @@
+#!/bin/bash
+
+BUILDNUM="Cerato v3.0.0(220607)"
+
+if [ "$#" -lt 1 ]; then
+    echo "Try 'ablestack --help' for more information."
+        exit 1
+fi
+if [ "-v" == "$1" ]; then
+    cat /etc/os-release | egrep "PRETTY_NAME" | cut -d = -f 2 | tr -d '"'
+    echo "Image Build No. $BUILDNUM"
+elif [ "--help" == "$1" ]; then
+    echo "Usage : ablestack -v"
+else
+    echo "Invalid parameter"
+        exit 1
+fi

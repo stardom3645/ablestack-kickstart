@@ -1,0 +1,8 @@
+[Main]
+Product=ABLESTACK
+Version=Cerato
+BugURL=https://ablecloud.io/
+IsFinal=True
+UUID=202206071251.x86_64
+[Compose]
+Lorax=28.14.49-1
