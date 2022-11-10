@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BUILDNUM="Cerato v3.0.0(220607)"
+BUILDNUM="Cerato v3.0.0"
 
 if [ "$#" -lt 1 ]; then
     echo "Try 'ablestack --help' for more information."
