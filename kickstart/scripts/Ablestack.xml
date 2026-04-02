@@ -16,4 +16,6 @@
   <port port="49152-49215" protocol="tcp"/>
   <port port="49152-49215" protocol="udp"/>
   <port port="3000-3005" protocol="tcp"/>
+  <port port="19100-19500" protocol="tcp"/>
+  <port port="443" protocol="tcp"/>
 </service>
